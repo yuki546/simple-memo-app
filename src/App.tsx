@@ -2,6 +2,7 @@ import { useState } from "react";
 import Layout from "./components/Layout";
 import type { Memo } from "./types";
 import Editor from "./components/Editor";
+import MemoList from "./components/MemoList";
 
 const initialMemo = {
   id: Date.now(),
@@ -29,12 +30,11 @@ function App() {
         <Editor
           placeholder="新しいメモを入力.."
           type="shadow"
-          onsubmit={addMemo}
+          onSubmit={addMemo}
         />
       </div>
-      {memos.map((memo) => (
-        <p key={memo.id}>{memo.text}</p>
-      ))}
+
+      <MemoList memos={memos} setMemos={setMemos} />
     </Layout>
   );
 }

@@ -5,7 +5,7 @@ type EditorProps = {
   initialValue?: string;
   placeholder?: string;
   type?: "border" | "shadow";
-  onsubmit: (content: string) => void;
+  onSubmit: (content: string) => void;
 };
 
 const Editor = (props: EditorProps) => {
@@ -27,7 +27,7 @@ const Editor = (props: EditorProps) => {
       />
       <button
         onClick={() => {
-          props.onsubmit(inputText);
+          props.onSubmit(inputText);
           setInputText("");
         }}
         className="px-8 py-3 bg-emerald-600 text-sm text-white rounded-lg hover:bg-emerald-700"
